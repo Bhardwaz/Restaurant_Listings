@@ -13,7 +13,7 @@ const RestaurantCard = ({ payload }) => {
   return (
     <>
       <div
-        className="card border-2 custom-border"
+        className="card border-2 custom-border col-4"
         style={{ width: "22rem", cursor: "pointer" }}
       >
         <div className="restaurantImage">

@@ -1,14 +1,9 @@
 import React, { useState, useContext } from "react";
-import MyContext from "./context/restaurantContext";
+import { RestaurantContext } from "./context/restaurantContext";
 const Navbar = () => {
   let [search, setSearch] = useState("");
 
-  const {
-    restaurants,
-    filteredRestaurants,
-    setRestaurants,
-    setFilteredRestaurants,
-  } = useContext(MyContext);
+  const { restaurants, setFilteredRestaurants } = useContext(RestaurantContext);
 
   const searchHandler = () => {
     search = search.toLowerCase();
@@ -34,11 +29,16 @@ const Navbar = () => {
             <input
               className="form-control me-2"
               type="search"
-              placeholder="Search"
               aria-label="Search"
+              placeholder="Search"
               value={search}
               onChange={(e) => {
                 setSearch(e.target.value);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  setSearch(e.target.value);
+                }
               }}
             />
             <button

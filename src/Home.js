@@ -1,11 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext } from "react";
 import RestaurantCard from "./components/RestaurantCard";
-import Filter from "./Filter";
-import MyContext from "./context/restaurantContext";
+import { RestaurantContext } from "./context/restaurantContext";
 
 const Home = () => {
-  const { filteredRestaurants, setFilteredRestaurants } = useContext(MyContext);
-
+  const { filteredRestaurants } = useContext(RestaurantContext);
   return (
     <div className="container">
       <div className="container ml-5">
@@ -13,7 +11,7 @@ const Home = () => {
           <h2 className="mt-2"> {filteredRestaurants.length} Restaurants </h2>
           <button>Cuisines</button>
         </div>
-        <div className="row mx-auto gap-3 mt-3">
+        <div className="row mx-auto gap-3 mt-3 col-12">
           {filteredRestaurants.length > 0 ? (
             filteredRestaurants.map((restaurant) => (
               <RestaurantCard payload={restaurant} key={restaurant.data.id} />
