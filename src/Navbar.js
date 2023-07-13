@@ -2,7 +2,6 @@ import React, { useState, useContext } from "react";
 import { RestaurantContext } from "./context/restaurantContext";
 const Navbar = () => {
   let [search, setSearch] = useState("");
-
   const { restaurants, setFilteredRestaurants } = useContext(RestaurantContext);
 
   const searchHandler = () => {
