@@ -13,8 +13,8 @@ const RestaurantCard = ({ payload }) => {
   return (
     <>
       <div
-        className="card border-2 custom-border col-4"
-        style={{ width: "22rem", cursor: "pointer" }}
+        className="card border-2 custom-border col-3"
+        style={{ width: "25rem", cursor: "pointer" }}
       >
         <div className="restaurantImage">
           <img
@@ -22,9 +22,6 @@ const RestaurantCard = ({ payload }) => {
             className="card-img-top"
             alt="restaurantImage"
           />
-          <div className="offer">
-            <p> 50% OFF upto to 100 </p>
-          </div>
         </div>
         <div className="card-body">
           <h6 className="card-title name">{name}</h6>
@@ -38,6 +35,37 @@ const RestaurantCard = ({ payload }) => {
       </div>
     </>
   );
+};
+
+export const promotedRestaurants = (RestaurantCard) => {
+  return (props) => {
+    return (
+      <>
+        <div
+          style={{
+            position: "relative",
+            margin: "12px",
+            padding: "2px",
+          }}
+        >
+          <label
+            style={{
+              backgroundColor: "#313131",
+              color: "white",
+              position: "absolute",
+              display: "inline-block",
+              padding: "3px",
+              zIndex: "1s",
+              borderRadius: "5%",
+            }}
+          >
+            Promoted
+          </label>
+        </div>
+        <RestaurantCard {...props} />
+      </>
+    );
+  };
 };
 
 export default RestaurantCard;

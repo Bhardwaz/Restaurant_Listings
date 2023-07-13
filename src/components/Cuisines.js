@@ -3,6 +3,10 @@ import { RestaurantContext } from "../context/restaurantContext";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleMenu } from "../reduxStore/cuisineSlice";
 import CuisineCheckbox from "./CuisineCheckbox";
+import {
+  UserSelectedCuisines,
+  selectedCuisinesContext,
+} from "../context/selectedCuisineContext";
 
 const Cuisines = () => {
   // making overflow hidden when user open the modal window for cuisines
@@ -25,7 +29,8 @@ const Cuisines = () => {
   // updating restaurant based upon selected cuisines
   const dispatch = useDispatch();
 
-  const [selectedCuisines, setSelectedCuisines] = useState([]);
+  const userSelected = useContext(selectedCuisinesContext);
+  const { selectedCuisines, setSelectedCuisines } = userSelected;
   let [a] = useState();
 
   useEffect(() => {
@@ -33,10 +38,6 @@ const Cuisines = () => {
       return r.data.cuisines.some((v) => selectedCuisines.includes(v));
     });
     setFilteredRestaurants(a);
-
-    return () => {
-      setFilteredRestaurants(restaurants);
-    };
   }, [selectedCuisines]);
 
   // todos -> making this function's working properly. applying all the filters onto web page and showing selected cuisines onto web page. Building a Product Page and Cart Functionality. Thats it
@@ -48,6 +49,7 @@ const Cuisines = () => {
         selectedCuisines[i] = selectedCuisines[i + 1];
       }
       selectedCuisines.length--;
+
       setSelectedCuisines([...selectedCuisines]);
       return;
     } else {
@@ -92,6 +94,8 @@ const Cuisines = () => {
           }}
           onClick={() => {
             dispatch(toggleMenu(false));
+            if (selectedCuisines.length === 0)
+              setFilteredRestaurants(restaurants);
           }}
         >
           &times;
@@ -121,6 +125,7 @@ const Cuisines = () => {
             index={index}
             key={index}
             addCuisines={addCuisines}
+            selectedCuisines={selectedCuisines}
           />
         ))}
       </div>

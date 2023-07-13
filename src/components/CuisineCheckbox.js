@@ -1,6 +1,6 @@
 import React from "react";
 
-const CuisineCheckbox = ({ menu, index, addCuisines }) => {
+const CuisineCheckbox = ({ menu, index, addCuisines, selectedCuisines }) => {
   return (
     <>
       <div
@@ -15,6 +15,7 @@ const CuisineCheckbox = ({ menu, index, addCuisines }) => {
           className="form-check-input"
           type="checkbox"
           id={index}
+          checked={selectedCuisines.includes(menu) ? true : false}
           style={{
             height: "25px",
             width: "25px",

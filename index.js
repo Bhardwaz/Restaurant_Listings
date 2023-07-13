@@ -9,6 +9,7 @@ import { MyRestaurantProvider } from "./src/context/restaurantContext";
 import { Provider } from "react-redux";
 import store from "./src/reduxStore/store";
 import Cuisines from "./src/components/Cuisines";
+import { UserSelectedCuisines } from "./src/context/selectedCuisineContext";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 if (process.env.NODE_ENV === "development") {
@@ -17,15 +18,17 @@ if (process.env.NODE_ENV === "development") {
 
 const AppLayout = () => {
   return (
-    <MyRestaurantProvider>
-      <Provider store={store}>
-        <Navbar />
-        <Banner />
-        <Cuisines />
-        <Tabs />
-        <Home />
-      </Provider>
-    </MyRestaurantProvider>
+    <UserSelectedCuisines>
+      <MyRestaurantProvider>
+        <Provider store={store}>
+          <Navbar />
+          <Banner />
+          <Cuisines />
+          <Tabs />
+          <Home />
+        </Provider>
+      </MyRestaurantProvider>
+    </UserSelectedCuisines>
   );
 };
 
