@@ -2,6 +2,9 @@
 .restaurantImage{
   position: relative;
 }
+* a{
+  all: unset;
+}
 .offer{
   position: absolute;
   top: 165px;
@@ -86,4 +89,12 @@
   cursor: pointer;
   border-bottom: 2px solid #ef4f5f;
   padding-bottom: 10px;
+}
+.img-container{
+  overflow: hidden;
+  transition: all ease-in-out 4s ;
+}
+.img1:hover, .img2:hover{
+  transform: scale(1.1);
+  transition: all ease-in-out 2s ;
 }

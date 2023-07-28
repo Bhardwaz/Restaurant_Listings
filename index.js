@@ -10,11 +10,13 @@ import { Provider } from "react-redux";
 import store from "./src/reduxStore/store";
 import Cuisines from "./src/components/Cuisines";
 import { UserSelectedCuisines } from "./src/context/selectedCuisineContext";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import RestaurantPage from "./src/components/RestaurantPage";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-if (process.env.NODE_ENV === "development") {
-  makeServer({ environment: "development" });
-}
+// if (process.env.NODE_ENV === "development") {
+//   makeServer({ environment: "development" });
+// }
 
 const AppLayout = () => {
   return (
@@ -23,13 +25,30 @@ const AppLayout = () => {
         <Provider store={store}>
           <Navbar />
           <Banner />
-          <Cuisines />
           <Tabs />
-          <Home />
+          <Cuisines />
+          <Outlet />
         </Provider>
       </MyRestaurantProvider>
     </UserSelectedCuisines>
   );
 };
 
-root.render(<AppLayout />);
+const appRouter = createBrowserRouter([
+  {
+    path: "/",
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "/restaurant/:id",
+        element: <RestaurantPage />,
+      },
+    ],
+  },
+]);
+
+root.render(<RouterProvider router={appRouter} />);

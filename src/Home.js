@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux";
 import { toggleMenu } from "./reduxStore/cuisineSlice";
 import { selectedCuisinesContext } from "./context/selectedCuisineContext";
 import FilteredCuisine from "./components/FilteredCuisine";
+import { NavLink } from "react-router-dom";
 
 const Home = () => {
   const [activeButton, setActiveButton] = useState("All");
@@ -88,19 +89,32 @@ const Home = () => {
               })
             : " "}
         </div>
-        <div className="row mx-auto gap-3 mt-3 col-12">
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexWrap: "wrap",
+            alignItems: "center",
+            alignContent: "baseline",
+            gap: "20px",
+          }}
+        >
           {filteredRestaurants.length > 0 ? (
             filteredRestaurants.map((restaurant) =>
               restaurant.data.promoted ? (
-                <RestaurantCardPromoted
-                  payload={restaurant}
+                <NavLink
+                  to={"/restaurant/" + restaurant.data.id}
                   key={restaurant?.data?.id}
-                />
+                >
+                  <RestaurantCardPromoted payload={restaurant} />{" "}
+                </NavLink>
               ) : (
-                <RestaurantCard
-                  payload={restaurant}
+                <NavLink
+                  to={"/restaurant/" + restaurant.data.id}
                   key={restaurant?.data?.id}
-                />
+                >
+                  <RestaurantCard payload={restaurant} />
+                </NavLink>
               )
             )
           ) : (

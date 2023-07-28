@@ -1,5 +1,6 @@
 import React, { useState, useContext } from "react";
 import { RestaurantContext } from "./context/restaurantContext";
+import { NavLink } from "react-router-dom";
 const Navbar = () => {
   let [search, setSearch] = useState("");
   const { restaurants, setFilteredRestaurants } = useContext(RestaurantContext);
@@ -15,9 +16,12 @@ const Navbar = () => {
     <div>
       <nav className="navbar bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand text-success font-monospace text-lg">
+          <NavLink
+            to={"/"}
+            className="navbar-brand text-success font-monospace text-lg"
+          >
             Potato
-          </a>
+          </NavLink>
           <form
             className="d-flex"
             role="search"

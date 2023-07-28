@@ -41,27 +41,21 @@ export const promotedRestaurants = (RestaurantCard) => {
   return (props) => {
     return (
       <>
-        <div
+        <label
           style={{
-            position: "relative",
-            margin: "12px",
-            padding: "2px",
+            backgroundColor: "#313131",
+            color: "white",
+            position: "absolute",
+            display: "inline-block",
+            padding: "3px 10px",
+            zIndex: "10",
+            borderRadius: "5%",
+            boxShadow: "-2px 2px rgba(0,0,0,.5)",
+            fontFamily: "cursive",
           }}
         >
-          <label
-            style={{
-              backgroundColor: "#313131",
-              color: "white",
-              position: "absolute",
-              display: "inline-block",
-              padding: "3px",
-              zIndex: "1s",
-              borderRadius: "5%",
-            }}
-          >
-            Promoted
-          </label>
-        </div>
+          Promoted
+        </label>
         <RestaurantCard {...props} />
       </>
     );
