@@ -16,14 +16,12 @@ const Home = () => {
   const userSelected = useContext(selectedCuisinesContext);
   const { selectedCuisines } = userSelected;
   const dispatch = useDispatch();
-
   // promoted reastaurants
   const RestaurantCardPromoted = promotedRestaurants(RestaurantCard);
-
   function filterRestaurantsBasedRatings(rating) {
     setActiveButton(rating);
     const userFilteredRestaurant = restaurants.filter(
-      (res) => res.data.avgRating > rating && res.data.avgRating < rating + 1
+      (res) => res.info.avgRating > rating && res.info.avgRating < rating + 1
     );
     setFilteredRestaurants(userFilteredRestaurant);
   }
@@ -101,17 +99,17 @@ const Home = () => {
         >
           {filteredRestaurants.length > 0 ? (
             filteredRestaurants.map((restaurant) =>
-              restaurant.data.promoted ? (
+              restaurant.info.promoted ? (
                 <NavLink
-                  to={"/restaurant/" + restaurant.data.id}
-                  key={restaurant?.data?.id}
+                  to={"/restaurant/" + restaurant.info.id}
+                  key={restaurant?.info?.id}
                 >
                   <RestaurantCardPromoted payload={restaurant} />{" "}
                 </NavLink>
               ) : (
                 <NavLink
-                  to={"/restaurant/" + restaurant.data.id}
-                  key={restaurant?.data?.id}
+                  to={"/restaurant/" + restaurant.info.id}
+                  key={restaurant?.info?.id}
                 >
                   <RestaurantCard payload={restaurant} />
                 </NavLink>
