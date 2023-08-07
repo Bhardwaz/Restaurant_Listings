@@ -8,7 +8,7 @@ export const MyRestaurantProvider = ({ children }) => {
 
   async function gettingAllRestaurants() {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6195574&lng=77.0549901&page_type=DESKTOP_WEB_LISTING"
+      "https://corsproxy.io/?https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.6195574&lng=77.0549901&page_type=DESKTOP_WEB_LISTING"
     );
     const json = await data?.json();
     setFilteredRestaurants(
@@ -18,7 +18,7 @@ export const MyRestaurantProvider = ({ children }) => {
       json?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
-
+  console.log(restaurants);
   useEffect(() => {
     gettingAllRestaurants();
   }, []);

@@ -8,7 +8,7 @@ const Navbar = () => {
   const searchHandler = () => {
     search = search.toLowerCase();
     return restaurants.filter((restaurant) => {
-      return restaurant.data.name.toLowerCase().includes(search);
+      return restaurant.info.name.toLowerCase().includes(search);
     });
   };
 

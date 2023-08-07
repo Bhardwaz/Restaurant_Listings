@@ -35,7 +35,7 @@ const Cuisines = () => {
 
   useEffect(() => {
     a = restaurants.filter((r) => {
-      return r.data.cuisines.some((v) => selectedCuisines.includes(v));
+      return r.info.cuisines.some((v) => selectedCuisines.includes(v));
     });
     setFilteredRestaurants(a);
   }, [selectedCuisines]);
@@ -60,13 +60,12 @@ const Cuisines = () => {
   let allCuisines;
   const handleCuisines = () => {
     allCuisines = restaurants.flatMap((restaurant) => {
-      return restaurant.data.cuisines;
+      return restaurant.info.cuisines;
     });
     allCuisines = [...new Set(allCuisines)];
     // setAllMenu(allCuisines);
   };
   handleCuisines();
-
   // checking if modal is opened or not
   if (!isMenuOpen) return;
   return (

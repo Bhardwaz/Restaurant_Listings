@@ -1,7 +1,7 @@
 import React from "react";
 import { cloudinary } from "../utils/mockdata";
 const RestaurantCard = ({ payload }) => {
-  const { type, data, subtype } = payload;
+  const { info } = payload;
   const {
     name,
     cuisines,
@@ -9,7 +9,7 @@ const RestaurantCard = ({ payload }) => {
     avgRating,
     costForTwo,
     deliveryTime,
-  } = data;
+  } = info;
   return (
     <>
       <div
