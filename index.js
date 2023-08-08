@@ -11,6 +11,7 @@ import store from "./src/reduxStore/store";
 import Cuisines from "./src/components/Cuisines";
 import { UserSelectedCuisines } from "./src/context/selectedCuisineContext";
 import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import RestaurantsMenu from "./src/components/RestaurantsMenu";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 // if (process.env.NODE_ENV === "development") {
