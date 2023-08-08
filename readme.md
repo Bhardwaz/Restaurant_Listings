@@ -16,6 +16,6 @@
 
 # Some Visuals of Application
 
-![Screenshot](assests/visualsOfResListings.PNG)
+![Screenshot](assests/screenshot.PNG)
 
 ![Sccreenshot-2](assests/visuals2ofreslisting.PNG)

@@ -87,8 +87,10 @@
   align-items: center;
   gap: 15px;
   cursor: pointer;
-  border-bottom: 2px solid #ef4f5f;
   padding-bottom: 10px;
+}
+.active{
+  border-bottom: 4px solid #ef4f5f;
 }
 .img-container{
   overflow: hidden;
