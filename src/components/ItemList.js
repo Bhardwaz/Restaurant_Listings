@@ -11,6 +11,7 @@ const ItemList = ({ items }) => {
               src={cloudinary + item?.card?.info?.imageId}
               alt=""
             />
+            <button className="item-add-btn"> Add +</button>
           </div>
 
           <div className="item-details-container">

@@ -48,6 +48,7 @@
 }
 .item-image-container{
     width: 20%;
+    position: relative;
 }
 .item-image-container img{
     width: 100%;
@@ -63,4 +64,23 @@
    color: rgba(40,44,63,.45);
    letter-spacing : -.3px;
    font-family:  Arial, Helvetica, sans-serif
+}
+.item-add-btn{
+    position: absolute;
+    left: 65px;
+    bottom: 6px;
+    border-radius: 10%;
+    background-color: white;
+    border: none;
+    outline: none;
+    padding: 5px 20px;
+    font-size: 18px;
+    color: limegreen
+}
+.item-add-btn:hover{
+    background-color: rgb(255, 255, 255, .9);
+    scale: 1.1;
+}
+.item-add-btn:active{
+    transform: translateY(2px);
 }
