@@ -35,3 +35,7 @@ export const banner3Id = urlOfbanners + "887a5e960bccd776c1c124a8eb2ada0f";
 export const banner4Id = urlOfbanners + "2e54588fcfbfae32c57d1d4d3515f6e5";
 
 export const banner5Id = urlOfbanners + "5024fb3f12cc851e695663575b4b09f0";
+
+// LIVE APIs
+export const MENU_API =
+  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=12.9351929&lng=77.62448069999999&restaurantId=";

@@ -1,0 +1,42 @@
+.restaurant-page-container, .categories-container{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.restaurant-page-container name {
+    display: flex;
+    justify-content: center;
+}
+.restaurant-name{
+    font-family: cursive;
+}
+
+/* restaurant-categories css */
+.categories-container{
+    margin: 16px 0px 16px 0px;
+   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+.categories-header{
+    width: 100%;
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   font-size: 20px;
+   font-weight: 700;
+   cursor: pointer;
+}
+.item-container{
+    padding: 20px 0px;
+    margin: 20px;
+}
+.singleItem{
+    padding: 5px 20px;
+    border-bottom: 1px solid tomato;
+}
+.item-image{
+    width: 50px;
+}
