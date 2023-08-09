@@ -10,7 +10,13 @@ const RestaurantCategories = ({ data, showItems, setOpened }) => {
         <span>
           {data.title} ({data?.itemCards?.length}){" "}
         </span>
-        <span>⬇️</span>
+        <span>
+          {showItems ? (
+            <i className="fa-solid fa-angle-up"></i>
+          ) : (
+            <i className="fa-solid fa-angle-down"></i>
+          )}
+        </span>
       </div>
       <div>{showItems && <ItemList items={data.itemCards} />}</div>
     </div>

@@ -59,6 +59,7 @@ const Cuisines = () => {
   // getting all cuisines
   let allCuisines;
   const handleCuisines = () => {
+    if (!restaurants) return;
     allCuisines = restaurants.flatMap((restaurant) => {
       return restaurant.info.cuisines;
     });

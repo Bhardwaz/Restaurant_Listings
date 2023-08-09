@@ -5,7 +5,7 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategories from "./RestaurantCategories";
 
 const RestaurantsMenu = () => {
-  const [opened, setOpened] = useState(0);
+  const [opened, setOpened] = useState(1);
 
   const { id } = useParams();
 

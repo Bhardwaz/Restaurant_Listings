@@ -1,9 +1,15 @@
 @import "bootstrap/scss/bootstrap";
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:wght@100&display=swap');
+
 .restaurantImage{
   position: relative;
 }
 * a{
   all: unset;
+}
+body{
+  font-family: 'Montserrat', monospace;
 }
 .offer{
   position: absolute;

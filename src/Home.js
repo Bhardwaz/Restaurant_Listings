@@ -30,7 +30,11 @@ const Home = () => {
       <div className="container ml-5">
         <div className="d-flex-row justify-content-between gap-3">
           <div>
-            <h2 className="mt-2"> {filteredRestaurants.length} Restaurants </h2>
+            <h2 className="mt-2">
+              {" "}
+              {filteredRestaurants &&
+                filteredRestaurants.length} Restaurants{" "}
+            </h2>
             <button
               className="btn btn-outline-success m-2"
               onClick={() => {
@@ -97,7 +101,7 @@ const Home = () => {
             gap: "20px",
           }}
         >
-          {filteredRestaurants.length > 0 ? (
+          {filteredRestaurants ? (
             filteredRestaurants.map((restaurant) =>
               restaurant.info.promoted ? (
                 <NavLink
@@ -118,7 +122,8 @@ const Home = () => {
           ) : (
             <div className="container">
               {" "}
-              No Restaurant Found. Please Search Some Other Favourite 🍴{" "}
+              No restaurant found. Please search some other favourite or refresh
+              the page once 🍴{" "}
             </div>
           )}
         </div>

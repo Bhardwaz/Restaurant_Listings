@@ -21,7 +21,7 @@
    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 .categories-header{
-    width: 100%;
+   width: 100%;
    display: flex;
    justify-content: space-between;
    padding: 20px;
@@ -32,11 +32,36 @@
 .item-container{
     padding: 20px 0px;
     margin: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
-.singleItem{
-    padding: 5px 20px;
-    border-bottom: 1px solid tomato;
+.item{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 10px;
+    width: 100%;
+    
 }
-.item-image{
-    width: 50px;
+.item-details-container{
+    width: 70%;
+}
+.item-image-container{
+    width: 20%;
+}
+.item-image-container img{
+    width: 100%;
+}
+.namePrice{
+    color: #3e4152;
+    font-size: 17px;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+}
+.item-description{
+   color: rgba(40,44,63,.45);
+   letter-spacing : -.3px;
+   font-family:  Arial, Helvetica, sans-serif
 }
