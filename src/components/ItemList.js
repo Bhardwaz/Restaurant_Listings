@@ -1,6 +1,14 @@
 import React from "react";
 import { cloudinary } from "../utils/mockdata";
+import { useDispatch, useSelector } from "react-redux";
+import store from "../reduxStore/store";
+import { addToCart } from "../reduxStore/cartSlice";
 const ItemList = ({ items }) => {
+  const addToCart = useSelector((store) => store.cart);
+
+  const dispatch = useDispatch();
+
+  console.log(addToCart, "line 8");
   return (
     <div className="item-container">
       {items.map((item) => (
@@ -11,7 +19,15 @@ const ItemList = ({ items }) => {
               src={cloudinary + item?.card?.info?.imageId}
               alt=""
             />
-            <button className="item-add-btn"> Add +</button>
+            <button
+              className="item-add-btn"
+              onClick={() => {
+                dispatch(addToCart(item));
+              }}
+            >
+              {" "}
+              Add +
+            </button>
           </div>
 
           <div className="item-details-container">
