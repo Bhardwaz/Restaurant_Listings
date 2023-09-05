@@ -2,14 +2,8 @@ import React from "react";
 import { cloudinary } from "../utils/mockdata";
 const RestaurantCard = ({ payload }) => {
   const { info } = payload;
-  const {
-    name,
-    cuisines,
-    cloudinaryImageId,
-    avgRating,
-    costForTwo,
-    deliveryTime,
-  } = info;
+  const { name, cuisines, cloudinaryImageId, avgRating, costForTwo, sla } =
+    info;
   console.log(info);
   return (
     <>
@@ -32,7 +26,7 @@ const RestaurantCard = ({ payload }) => {
           <p className="card-title cuisine">{cuisines.join(", ")}</p>
           <p className="card-text">{costForTwo} Rs. For Two</p>
         </div>
-        <h6 className="end margin-Top"> {deliveryTime} Minutes </h6>
+        <h6 className="end margin-Top"> {sla.deliveryTime} Minutes </h6>
       </div>
     </>
   );
