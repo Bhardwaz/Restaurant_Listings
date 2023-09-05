@@ -10,6 +10,7 @@ const RestaurantCard = ({ payload }) => {
     costForTwo,
     deliveryTime,
   } = info;
+  console.log(info);
   return (
     <>
       <div
@@ -29,7 +30,7 @@ const RestaurantCard = ({ payload }) => {
         </div>
         <div className="card-body marginTop">
           <p className="card-title cuisine">{cuisines.join(", ")}</p>
-          <p className="card-text">{costForTwo / 100} Rs. For Two</p>
+          <p className="card-text">{costForTwo} Rs. For Two</p>
         </div>
         <h6 className="end margin-Top"> {deliveryTime} Minutes </h6>
       </div>
