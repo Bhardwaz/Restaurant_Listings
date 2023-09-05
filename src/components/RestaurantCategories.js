@@ -1,5 +1,5 @@
 import React from "react";
-import ItemList from "./itemList";
+import ItemList from "../components/ItemList";
 const RestaurantCategories = ({ data, showItems, setOpened }) => {
   const handleClick = () => {
     setOpened();

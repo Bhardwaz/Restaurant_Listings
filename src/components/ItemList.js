@@ -8,7 +8,6 @@ const ItemList = ({ items }) => {
 
   const dispatch = useDispatch();
 
-  console.log(addToCart, "line 8");
   return (
     <div className="item-container">
       {items.map((item) => (
